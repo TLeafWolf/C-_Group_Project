@@ -1,0 +1,5 @@
+Drink   $3.00
+Burger  $10.00
+Fries   $3.29
+Nuggets $3.99
+Pizza   $15.00
