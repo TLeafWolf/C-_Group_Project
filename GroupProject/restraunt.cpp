@@ -2,9 +2,9 @@
 #include <fstream>
 #include <string> 
 using namespace std;
-//will add on to menu.txt for pricing of different sizes and types
+//might add on to menu.txt for pricing of different sizes and types
 int main(){
-    cout << "MENU\n\n";
+    cout << "MENU\n";
     // Specify the path to your text file
     std::string filename = "menu.txt"; // Replace with your file's name
 
@@ -27,6 +27,20 @@ int main(){
     inputFile.close();
     
     //testing Area: move to where they are needed when done testing or function/class is created for it
-
+    //array for drink and food sizes. for input options later
+    cout << "\nSIZES:\n";
+    string Sizes[] = {"Small", "Medium", "Large"};
+    int Length1 = sizeof(Sizes) / sizeof(Sizes[0]);
+        for (int i = 0; i < Length1 ; i++) {
+        std::cout << Sizes[i] << "\n";//what prints each item in array
+    }
+    //array for pizza types. for input options later
+    cout << "\nPIZZA TYPE:\n";
+    string PizzaTypes[] = {"Pepperoni", "Sausage", "Cheese", "Custom"};
+    int Length2 = sizeof(PizzaTypes) / sizeof(PizzaTypes[0]);
+        for (int i = 0; i < Length2 ; i++) {
+        std::cout << PizzaTypes[i] << "\n"; //what prints each item in array
+        }
+    // return statement don't move
     return 0;
 }
