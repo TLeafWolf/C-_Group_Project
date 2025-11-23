@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string> 
 using namespace std;
-//may or may not have prices seperate from menu.txt for pricing of different sizes and types or calculating
+//will add on to menu.txt for pricing of different sizes and types
 int main(){
     cout << "MENU\n\n";
     // Specify the path to your text file
