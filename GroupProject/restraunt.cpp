@@ -26,7 +26,7 @@ int main(){
     // Close the file
     inputFile.close();
     
-    //testing Area: move to where they are needed
+    //testing Area: move to where they are needed when done testing or function/class is created for it
 
     return 0;
 }
