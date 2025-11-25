@@ -6,7 +6,7 @@ using namespace std;
 int main(){
     cout << "MENU\n";
     // Specify the path to your text file
-    std::string filename = "menu.txt"; // Replace with your file's name
+    std::string filename = "menu.txt"; 
 
     // Create an ifstream object to read from the file
     std::ifstream inputFile(filename);
