@@ -1,15 +1,19 @@
 # C-_Group_Project
 # Ideas + Roles
+
+Display and allow interaction with Base options without type(currently only pizza type) or size. Base options will be Drink, Burger, Fries, Nuggets, and Pizza.
+
+use arrays for item sizes and pizza types as options after base option is picked and use the price associated with the item and its size.
+
+
 ## A working application using at least two classes (25 points).
 
-One class is for taking orders (Teresa Newman)
+One class is for taking orders
 
 Class to return/display order information
 
 
 ## Implementing a modular approach by using functions (10 points).
-Function to pull items and pricing from order.text for the class to return the order.
-
 Function to calculate and gets called in the class for order info the total price after the customer completes the order.
 
 
