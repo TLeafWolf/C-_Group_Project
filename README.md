@@ -4,11 +4,11 @@
 
 One class is for taking orders (Teresa Newman)
 
-Class to return order information
+Class to return/display order information
 
 
 ## Implementing a modular approach by using functions (10 points).
-Function to get/create the order info of each item ordered and its price after order is complete. To be called in the class for order info.
+Function to pull items and pricing from order.text. And display it to the class to return the order.
 
 Function to calculate and gets called in the class for order info the total price after the customer completes the order.
 
@@ -17,7 +17,7 @@ Function to calculate and gets called in the class for order info the total pric
 
 File list for things in menu (Teresa Newman)
 
-1 text file to save order in.
+1 text file to save order in. + ways to store order info in it.
 
 
 ## Include the usage of at least two arrays (10 points).
