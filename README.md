@@ -16,7 +16,7 @@ Function to calculate and display the total price after the customer completes t
 
 File list for things in menu (Teresa Newman)
 
-1 file to save order
+1 text file to save order in.
 
 
 ## Include the usage of at least two arrays (10 points).
