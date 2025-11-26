@@ -8,7 +8,7 @@ Class to return/display order information
 
 
 ## Implementing a modular approach by using functions (10 points).
-Function to pull items and pricing from order.text. And display it to the class to return the order.
+Function to pull items and pricing from order.text for the class to return the order.
 
 Function to calculate and gets called in the class for order info the total price after the customer completes the order.
 
