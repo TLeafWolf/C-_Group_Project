@@ -8,9 +8,9 @@ Class to return order information
 
 
 ## Implementing a modular approach by using functions (10 points).
-Function to calculate the total price after the customer completes the order.
+Function to display the order info of each item ordered and its price after order is complete.
 
-Function to display the order info of each item ordered and its price after the customer completes the order.
+Function to calculate and display the total price after the customer completes the order.
 
 ## Use at least two files in your application. (10 points).
 
