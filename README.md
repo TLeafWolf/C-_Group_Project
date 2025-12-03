@@ -19,16 +19,16 @@ Function to calculate and gets called in the class for order info the total pric
 
 ## Use at least two files in your application. (10 points).
 
-File list for things in menu (Teresa Newman)
+File list for things in menu
 
 1 text file to save order in. + ways to store order info in it.
 
 
 ## Include the usage of at least two arrays (10 points).
 
-Array for drink or food sizes? (Teresa Newman)
+Array for drink or food sizes?
 
-Array for types of food like types of pizzas or burgers? (Teresa Newman)
+Array for types of food like types of pizzas or burgers?
 
 
 ## Implement secure coding best practices (10 points).
