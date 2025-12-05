@@ -1,14 +1,14 @@
 # C-_Group_Project
 # Ideas + Roles
 
-Display and allow interaction with Base options without type(currently only pizza type) or size. Base options will be Drink, Burger, Fries, Nuggets, and Pizza. and option to complete order.
+Display and allow interaction with Base options without type(currently only pizza type) or size. Base options will be Drink, Burger, Fries, Nuggets, and Pizza. and option to complete order.(done By Teresa)
 
-use arrays for item sizes and pizza types as options after base option is picked and use the price associated with the item and its size.
+use arrays for item sizes and pizza types as options after base option is picked and use the price associated with the item and its size. (done By Teresa)
 
 
 ## A working application using at least two classes (25 points).
 
-One class is for taking orders
+One class is for taking orders (done By Teresa)
 
 Class to return/display order information
 
@@ -26,9 +26,9 @@ File list for things in menu
 
 ## Include the usage of at least two arrays (10 points).
 
-Array for drink or food sizes
+Array for drink or food sizes (done By Teresa)
 
-Array for types of food like types of pizzas or burgers
+Array for types of food like types of pizzas or burgers (done By Teresa)
 
 
 ## Implement secure coding best practices (10 points).
