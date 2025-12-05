@@ -31,7 +31,7 @@ public:
         cout << "6. Complete Order\n";
     }
 
-    // Adds an item to the order and prints its details. move to display class?
+    // Adds an item to the order and prints its details. move to display class or order file?
     void addItem(const string& item, const string& detail, double price) {
         stringstream ss;
         ss << fixed << setprecision(2) << price;
@@ -44,7 +44,7 @@ public:
         cout << "Added " << item << " (" << detail << ") - $" << price << "\n";
     }
 
-    // Prints the complete order summary. move to display class?
+    // Prints the complete order summary. move to display class or order file?
     void completeOrder() {
         cout << "\nORDER COMPLETE\n";
 
@@ -111,11 +111,11 @@ public:
         }
     }
 };
-//class for order display not fully made yet
+//class for order display not fully made yet or to order file instead of this.
 class OrderDisplay{
     // code to be executed
 };
-// put put total price in function. To display in the OrderDisplay class?
+// put put total price in function. To display in the OrderDisplay class? or to order file instead of this.
 void totalPrice() {
   // code to be executed
 }
