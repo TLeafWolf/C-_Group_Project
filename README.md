@@ -5,9 +5,9 @@ Display and allow interaction with Base options without type(currently only pizz
 
 use arrays for item sizes and pizza types as options after base option is picked and use the price associated with the item and its size. (done By Teresa)
 
-connect the menu files to main and replace or move any code to whatever files they need to go in
+connect the menu files to main and replace or move any code to whatever files they need to go in.
 
-connect the order files to main and replace or move any code to whatever files they need to go in
+connect the order files to main and replace or move any code to whatever files they need to go in.
 
 
 ## A working application using at least two classes (25 points).
