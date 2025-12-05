@@ -10,7 +10,7 @@ use arrays for item sizes and pizza types as options after base option is picked
 
 One class is for taking orders (done By Teresa)
 
-Class to return/display order information (Being worked on)
+Class to return/display order information
 
 
 ## Implementing a modular approach by using functions (10 points).
