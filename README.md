@@ -26,9 +26,9 @@ File list for things in menu
 
 ## Include the usage of at least two arrays (10 points).
 
-Array for drink or food sizes?
+Array for drink or food sizes
 
-Array for types of food like types of pizzas or burgers?
+Array for types of food like types of pizzas or burgers
 
 
 ## Implement secure coding best practices (10 points).
