@@ -20,13 +20,13 @@ public:
         std::cout << "6. Complete Order\n";
         std::cout << "====================\n";
     }
-
+    //move void to display class ?
     void addItem(const std::string& item) {
-        // palce holder till prices added in
+        // place holder till prices added in
         order.push_back(item + " (PRICE TBD)");
         std::cout << "Added " << item << ".\n";
     }
-
+    //move void to display class ?
     void completeOrder() {
         
         std::cout << "\n=== ORDER COMPLETE ===\n";
@@ -40,6 +40,15 @@ public:
         std::cout << "======================\n";
     }
 };
+
+//class for order display not fully made yet
+class OrderDisplay{
+    // code to be executed
+};
+// put put total price in function. To display in the OrderDisplay class?
+void totalPrice() {
+  // code to be executed
+}
 int main(){
     cout << "MENU\n";
     // Specify the path to your text file
@@ -82,7 +91,6 @@ int main(){
     //display stuff for order class
     OrderSystem os;
     int choice = 0;
-
     while (true) {
         os.displayMenu();
         std::cout << "Select an option (1-6): ";
