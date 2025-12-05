@@ -19,7 +19,7 @@ Function to calculate and gets called in the class for order info the total pric
 
 ## Use at least two files in your application. (10 points).
 
-File list for things in menu
+Text File list for things in menu (done? by Teresa)
 
 1 text file to save order in. + ways to store order info in it.
 
