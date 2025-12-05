@@ -1,46 +1,116 @@
-#include<iostream>
+#include <iostream>
 #include <fstream>
+#include <sstream>
 #include <vector>
-#include <string> 
+#include <string>
+#include <iomanip>
+
 using namespace std;
-//might adjust prices on menu.txt to be more realistic prices.
+// might adjust prices later
 
 class OrderSystem {
 private:
-    std::vector<std::string> order;
+    vector<string> order;
+    double total = 0.0;
+
+    // Prices for items based on size (Small, Medium, Large)
+    const double drinkPrices[3]  = {2.00, 3.00, 4.00};
+    const double burgerPrices[3] = {7.00, 10.00, 15.00};
+    const double friesPrices[3]  = {2.29, 3.29, 4.29};
+    const double nuggetPrices[3] = {2.99, 3.99, 4.99}; 
+    const double pizzaPrices[3]  = {10.00, 15.00, 20.00};
 
 public:
     void displayMenu() {
-        std::cout << "\n=== Base Options ===\n";
-        std::cout << "1. Drink\n";
-        std::cout << "2. Burger\n";
-        std::cout << "3. Fries\n";
-        std::cout << "4. Nuggets\n";
-        std::cout << "5. Pizza\n";
-        std::cout << "6. Complete Order\n";
-        std::cout << "====================\n";
+        cout << "\nSelect Item\n";
+        cout << "1. Drink\n";
+        cout << "2. Burger\n";
+        cout << "3. Fries\n";
+        cout << "4. Nuggets\n";
+        cout << "5. Pizza\n";
+        cout << "6. Complete Order\n";
     }
-    //move void to display class ?
-    void addItem(const std::string& item) {
-        // place holder till prices added in
-        order.push_back(item + " (PRICE TBD)");
-        std::cout << "Added " << item << ".\n";
+
+    // Adds an item to the order and prints its details. move to display class?
+    void addItem(const string& item, const string& detail, double price) {
+        stringstream ss;
+        ss << fixed << setprecision(2) << price;
+
+        order.push_back(item + " - " + detail + " : $" + ss.str());
+
+        total += price;
+
+        cout << fixed << setprecision(2);
+        cout << "Added " << item << " (" << detail << ") - $" << price << "\n";
     }
-    //move void to display class ?
+
+    // Prints the complete order summary. move to display class?
     void completeOrder() {
-        
-        std::cout << "\n=== ORDER COMPLETE ===\n";
+        cout << "\nORDER COMPLETE\n";
+
         if (order.empty()) {
-            std::cout << "No items selected.\n";
+            cout << "No items selected.\n";
         } else {
             for (const auto& item : order) {
-                std::cout << "- " << item << "\n";
+                cout << "- " << item << "\n";
             }
         }
-        std::cout << "======================\n";
+
+        cout << fixed << setprecision(2);
+        cout << "TOTAL: $" << total << "\n";
+    }
+
+    // Returns index chosen from the given options
+    int askOption(const string options[], int count, const string& prompt) {
+        cout << prompt << "\n";
+        for (int i = 0; i < count; i++) {
+            cout << i + 1 << ". " << options[i] << "\n";
+        }
+        int choice;
+        do {
+            cout << "Choice: ";
+            cin >> choice;
+        } while (choice < 1 || choice > count);
+        return choice - 1;
+    }
+
+    // Processes the choice selected by the user
+    void processChoice(int choice) {
+        static string Sizes[] = {"Small", "Medium", "Large"};
+        static string PizzaTypes[] = {"Pepperoni", "Sausage", "Cheese", "Custom"};
+
+        switch (choice) {
+            case 1: { // Drink (size-based price)
+                int size = askOption(Sizes, 3, "Select drink size (1-3):");
+                addItem("Drink", Sizes[size], drinkPrices[size]);
+                break;
+            }
+            case 2: { // Burger (size-based price)
+                int size = askOption(Sizes, 3, "Select burger size (1-3):");
+                addItem("Burger", Sizes[size], burgerPrices[size]);
+                break;
+            }
+            case 3: { // Fries (size-based price)
+                int size = askOption(Sizes, 3, "Select fries size (1-3):");
+                addItem("Fries", Sizes[size], friesPrices[size]);
+                break;
+            }
+            case 4: { // Nuggets (size-based price)
+                int size = askOption(Sizes, 3, "Select nugget size (1-3):");
+                addItem("Nuggets", Sizes[size], nuggetPrices[size]);
+                break;
+            }
+            case 5: { // Pizza (size-based price + type label)
+                int size = askOption(Sizes, 3, "Select pizza size (1-3):");
+                int type = askOption(PizzaTypes, 4, "Select pizza type (1-4):");
+
+                string desc = Sizes[size] + string(" ") + PizzaTypes[type];
+                addItem("Pizza", desc, pizzaPrices[size]);
+                break;
+            }
+        }
     }
 };
-
 //class for order display not fully made yet
 class OrderDisplay{
     // code to be executed
@@ -49,66 +119,44 @@ class OrderDisplay{
 void totalPrice() {
   // code to be executed
 }
-int main(){
+int main() {
     cout << "MENU\n";
-    // Specify the path to your text file
-    std::string filename = "menu.txt"; 
 
-    // Create an ifstream object to read from the file
-    std::ifstream inputFile(filename);
+    // Read the menu from a file
+    string filename = "menu.txt";
+    ifstream inputFile(filename);
 
-    // Check if the file was opened successfully
     if (!inputFile.is_open()) {
-        std::cerr << "Error: Could not open the file " << filename << std::endl;
-        return 1; // Indicate an error
+        cerr << "Error: Could not open file " << filename << endl;
+        return 1;
     }
 
-    // Read and display the file content line by line
-    std::string line;
-    while (std::getline(inputFile, line)) {
-        std::cout << line << std::endl;
+    string line;
+    while (getline(inputFile, line)) {
+        cout << line << endl;
     }
-
-    // Close the file
     inputFile.close();
-    
-    //testing Area: move to where they are needed when done testing or function/class is created for it
-    //array for drink and food sizes. for input options later
-    cout << "\nSIZES:\n";
-    string Sizes[] = {"Small", "Medium", "Large"};
-    int Length1 = sizeof(Sizes) / sizeof(Sizes[0]);
-        for (int i = 0; i < Length1 ; i++) {
-        std::cout << Sizes[i] << "\n";//what prints each item in array
-    }
-    //array for pizza types. for input options later
-    cout << "\nPIZZA TYPE:\n";
-    string PizzaTypes[] = {"Pepperoni", "Sausage", "Cheese", "Custom"};
-    int Length2 = sizeof(PizzaTypes) / sizeof(PizzaTypes[0]);
-        for (int i = 0; i < Length2 ; i++) {
-        std::cout << PizzaTypes[i] << "\n"; //what prints each item in array
-        }
 
-    //display stuff for order class
+    // Create the OrderSystem object
     OrderSystem os;
     int choice = 0;
+
+    // Main loop for taking the user's order
     while (true) {
         os.displayMenu();
-        std::cout << "Select an option (1-6): ";
-        std::cin >> choice;
+        cout << "Select an option (1-6): ";
+        cin >> choice;
 
-        switch (choice) {
-            case 1: os.addItem("Drink"); break;
-            case 2: os.addItem("Burger"); break;
-            case 3: os.addItem("Fries"); break;
-            case 4: os.addItem("Nuggets"); break;
-            case 5: os.addItem("Pizza"); break;
-            case 6: 
-                os.completeOrder();
-                return 0;
-            default:
-                std::cout << "Invalid selection. Try again.\n";
+        // Process the user's selection
+        if (choice >= 1 && choice <= 5)
+            os.processChoice(choice);
+        else if (choice == 6) {
+            os.completeOrder();
+            return 0;
+        } else {
+            cout << "Invalid choice.\n";
         }
     }
-    // return statement don't move
+
     return 0;
 }
