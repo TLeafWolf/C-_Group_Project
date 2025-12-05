@@ -1,7 +1,7 @@
 # C-_Group_Project
 # Ideas + Roles
 
-Display and allow interaction with Base options without type(currently only pizza type) or size. Base options will be Drink, Burger, Fries, Nuggets, and Pizza. and option to complete order.(done By Teresa)
+Display and allow interaction with Base options without type(currently only pizza type) or size. Base options will be Drink, Burger, Fries, Nuggets, and Pizza. and option to complete order. (done By Teresa)
 
 use arrays for item sizes and pizza types as options after base option is picked and use the price associated with the item and its size. (done By Teresa)
 
