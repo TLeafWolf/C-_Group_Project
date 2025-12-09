@@ -5,27 +5,27 @@ Display and allow interaction with Base options without type(currently only pizz
 
 use arrays for item sizes and pizza types as options after base option is picked and use the price associated with the item and its size. (done By Teresa)
 
-connect the menu files to main and replace or move any code to whatever files they need to go in.
+connect the menu files to main and replace or move any code to whatever files they need to go in. (to be done by Tyler)
 
-connect the order files to main and replace or move any code to whatever files they need to go in.
+connect the order files to main and replace or move any code to whatever files they need to go in. (to be done by Cameron Mayo)
 
 
 ## A working application using at least two classes (25 points).
 
 One class is for taking orders (done By Teresa)
 
-Class to return/display order information
+Class to return/display order information (to be done by Ashton)
 
 
 ## Implementing a modular approach by using functions (10 points).
-Function to calculate and gets called in the class for order info the total price after the customer completes the order.
+Function to calculate and gets called in the class for order info the total price after the customer completes the order. (Deyon)
 
 
 ## Use at least two files in your application. (10 points).
 
-Text File list for things in menu
+Text File list for things in menu (To Be done By Teresa)
 
-1 text file to save order in. + ways to store order info in it.
+1 text file to save order in. + ways to store order info in it. (to be done by Ashton)
 
 
 ## Include the usage of at least two arrays (10 points).
