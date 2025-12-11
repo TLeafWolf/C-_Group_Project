@@ -4,7 +4,7 @@ nugget size turned into an array for piece number for nuggets. (done by Teresa)
 
 ask for payment info.
 
-option to ask for a sauce for fries and nuggets. (done by Cameron Mayo)
+option to ask for a sauces. (done by Cameron Mayo)
 
 option to delete or cancel item or order.
 
