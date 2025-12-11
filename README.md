@@ -23,7 +23,7 @@ connect the order files to main and replace or move any code to whatever files t
 
 One class is for taking orders (done By Teresa)
 
-Class to return/display order information (done by Ashton?)
+Class to return/display order information (done by Ashton)
 
 
 ## Implementing a modular approach by using functions (10 points).
@@ -34,7 +34,7 @@ Function to calculate and gets called in the class for order info the total pric
 
 Text File list for things in menu (To Be done By Teresa)
 
-1 text file to save order in. + ways to store order info in it. (done by Ashton?)
+1 text file to save order in. + ways to store order info in it. (done by Ashton)
 
 
 ## Include the usage of at least two arrays (10 points).
