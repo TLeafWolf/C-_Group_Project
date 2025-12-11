@@ -77,6 +77,7 @@ public:
     // Processes the choice selected by the user
     void processChoice(int choice) {
         static string Sizes[] = {"Small", "Medium", "Large"};
+        static string NuggetTypes[] = {"4 Piece", "8 Piece", "12 Piece"};
         static string PizzaTypes[] = {"Pepperoni", "Sausage", "Cheese", "Custom"};
 
         switch (choice) {
@@ -96,8 +97,8 @@ public:
                 break;
             }
             case 4: { // Nuggets (size-based price)
-                int size = askOption(Sizes, 3, "Select nugget size (1-3):");
-                addItem("Nuggets", Sizes[size], nuggetPrices[size]);
+                int size = askOption(NuggetTypes, 3, "Select nugget size (1-3):");
+                addItem("Nuggets", NuggetTypes[size], nuggetPrices[size]);
                 break;
             }
             case 5: { // Pizza (size-based price + type label)
