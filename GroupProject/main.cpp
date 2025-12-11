@@ -31,7 +31,7 @@ public:
         cout << "6. Complete Order\n";
     }
 
-    // Adds an item to the order and prints its details. move to display class or order file?
+    // Adds an item to the order and prints its details. remove what we need to once we succesfully get order.cpp and order.h working with this main file.
     void addItem(const string& item, const string& detail, double price) {
         stringstream ss;
         ss << fixed << setprecision(2) << price;
@@ -44,7 +44,7 @@ public:
         cout << "Added " << item << " (" << detail << ") - $" << price << "\n";
     }
 
-    // Prints the complete order summary. move to display class or order file?
+    // Prints the complete order summary. remove what we need to once we succesfully get order.cpp and order.h working with this main file.
     void completeOrder() {
         cout << "\nORDER COMPLETE\n";
 
@@ -111,18 +111,15 @@ public:
         }
     }
 };
-//class for order display not fully made yet or to order file instead of this.
-class OrderDisplay{
-    // code to be executed
-};
-// put put total price in function. To display in the OrderDisplay class? or to order file instead of this.
+
+// put put total price in function. To display in the OrderDisplay class? or to order.cpp and .h file instead of this.
 void totalPrice() {
   // code to be executed
 }
 int main() {
     cout << "MENU\n";
 
-    // Read the menu from a file
+    // Read the menu from a file remove what we need to once we succesfully get menu.cpp and menu.h working with this main file.
     string filename = "menu.txt";
     ifstream inputFile(filename);
 
@@ -135,7 +132,7 @@ int main() {
     while (getline(inputFile, line)) {
         cout << line << endl;
     }
-    inputFile.close();
+    inputFile.close(); // last line of file read code
 
     // Create the OrderSystem object
     OrderSystem os;
