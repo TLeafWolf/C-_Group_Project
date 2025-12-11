@@ -7,7 +7,7 @@ use arrays for item sizes and pizza types as options after base option is picked
 
 connect the menu files to main and replace or move any code to whatever files they need to go in. (to be done by Tyler)
 
-connect the order files to main and replace or move any code to whatever files they need to go in. (to be done by Cameron Mayo)
+connect the order files to main and replace or move any code to whatever files they need to go in. (to be done by Tyler)
 
 
 ## A working application using at least two classes (25 points).
@@ -18,14 +18,14 @@ Class to return/display order information (to be done by Ashton)
 
 
 ## Implementing a modular approach by using functions (10 points).
-Function to calculate and gets called in the class for order info the total price after the customer completes the order. (Deyon)
+Function to calculate and gets called in the class for order info the total price after the customer completes the order. (to be done by Deyon)
 
 
 ## Use at least two files in your application. (10 points).
 
 Text File list for things in menu (To Be done By Teresa)
 
-1 text file to save order in. + ways to store order info in it. (to be done by Ashton)
+1 text file to save order in. + ways to store order info in it. (to be done by Cameron Mayo)
 
 
 ## Include the usage of at least two arrays (10 points).
