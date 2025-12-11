@@ -1,6 +1,6 @@
 # C-_Group_Project
 # extra ideas
-nugget size turned into an array for piece number for nuggets.
+nugget size turned into an array for piece number for nuggets. (done by Teresa)
 
 ask for payment info.
 
