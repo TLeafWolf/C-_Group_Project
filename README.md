@@ -1,4 +1,9 @@
 # C-_Group_Project
+# extra ideas
+nugget size turned into an array for piece number for nuggets
+ask for credit number
+option to ask for a sauce for fries and nuggets
+
 # Ideas + Roles
 
 Display and allow interaction with Base options without type(currently only pizza type) or size. Base options will be Drink, Burger, Fries, Nuggets, and Pizza. and option to complete order. (done By Teresa)
