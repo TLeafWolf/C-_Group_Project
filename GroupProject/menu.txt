@@ -7,9 +7,10 @@ Large Burger  $15.00
 Small Fries   $2.29
 Medium Fries   $3.29
 Large Fries   $4.29
-Small Nuggets $2.99
-Medium Nuggets $3.99
-Large Nuggets $4.99
+4 Piece Nuggets $2.99
+8 Piece Nuggets $3.99
+12 Piece Nuggets $4.99
 Small Pizza Any Kind  $10.00
 Medium Pizza Any Kind  $15.00
 Large Pizza Any Kind  $20.00
+
