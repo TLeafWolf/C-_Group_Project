@@ -2,7 +2,7 @@
 # extra ideas
 nugget size turned into an array for piece number for nuggets.
 
-ask for credit number.
+ask for payment info.
 
 option to ask for a sauce for fries and nuggets.
 
