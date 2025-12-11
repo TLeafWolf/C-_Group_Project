@@ -1,8 +1,12 @@
 # C-_Group_Project
 # extra ideas
-nugget size turned into an array for piece number for nuggets
-ask for credit number
-option to ask for a sauce for fries and nuggets
+nugget size turned into an array for piece number for nuggets.
+
+ask for credit number.
+
+option to ask for a sauce for fries and nuggets.
+
+option to delete or cancel item or order.
 
 # Ideas + Roles
 
