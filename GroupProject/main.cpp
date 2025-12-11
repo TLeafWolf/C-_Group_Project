@@ -80,6 +80,10 @@ public:
         static string NuggetTypes[] = {"4 Piece", "8 Piece", "12 Piece"};
         static string PizzaTypes[] = {"Pepperoni", "Sausage", "Cheese", "Custom"};
 
+        
+        static string SauseTypes[] = {"ketchup", "mustard", "Mayo", "None"};
+
+        
         switch (choice) {
             case 1: { // Drink (size-based price)
                 int size = askOption(Sizes, 3, "Select drink size (1-3):");
@@ -98,8 +102,13 @@ public:
             }
             case 4: { // Nuggets (size-based price)
                 int size = askOption(NuggetTypes, 3, "Select nugget size (1-3):");
+                
+                int type = askOption(SauseTypes, 4, "Select a sause (1-4):");
+                string desc = Sizes[size] + string(" ") + SauseTypes[type];
+                
                 addItem("Nuggets", NuggetTypes[size], nuggetPrices[size]);
                 break;
+                
             }
             case 5: { // Pizza (size-based price + type label)
                 int size = askOption(Sizes, 3, "Select pizza size (1-3):");
@@ -157,4 +166,5 @@ int main() {
     }
 
     return 0;
+
 }
