@@ -1,5 +1,5 @@
 # C-_Group_Project
-# extra ideas
+# extra ideas (to be done by anyone once other parts of the assignment are met)
 nugget size turned into an array for piece number for nuggets. (done by Teresa)
 
 ask for payment info.
