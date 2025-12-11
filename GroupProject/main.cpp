@@ -92,25 +92,12 @@ public:
             }
             case 2: { // Burger (size-based price)
                 int size = askOption(Sizes, 3, "Select burger size (1-3):");
-
-
-                int type = askOption(SauseTypes, 4, "Select a sause (1-4):");
-                string desc = Sizes[size] + string(" ") + SauseTypes[type];
-
-                
-                addItem("Burger", Sizes[size], SauseTypes[type] ,burgerPrices[size]);
-
-                
+                addItem("Burger", Sizes[size], burgerPrices[size]);
                 break;
             }
             case 3: { // Fries (size-based price)
                 int size = askOption(Sizes, 3, "Select fries size (1-3):");
-
-                int type = askOption(SauseTypes, 4, "Select a sause (1-4):");
-                string desc = Sizes[size] + string(" ") + SauseTypes[type];
-
-                
-                addItem("Fries", Sizes[size], SauseTypes[type] ,friesPrices[size]);
+                addItem("Fries", Sizes[size], friesPrices[size]);
                 break;
             }
             case 4: { // Nuggets (size-based price)
@@ -119,7 +106,7 @@ public:
                 int type = askOption(SauseTypes, 4, "Select a sause (1-4):");
                 string desc = Sizes[size] + string(" ") + SauseTypes[type];
                 
-                addItem("Nuggets", NuggetTypes[size], SauseTypes[type] , nuggetPrices[size]);
+                addItem("Nuggets", NuggetTypes[size], nuggetPrices[size]);
                 break;
                 
             }
@@ -181,4 +168,3 @@ int main() {
     return 0;
 
 }
-
