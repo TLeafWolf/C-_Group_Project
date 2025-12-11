@@ -22,7 +22,15 @@ public:
     // Print order details
     void print() const;
 
+    // Write to File
+    void writeToFile(const std::string& filename = "orders.txt") const;
+
 private:
-    int orderID;
-    std::vector<std::string> items;
+    struct Item {
+        std::string name;
+        int quantity;
+        double price;
+    };
+
+    std::vector<Item> items;
 };
