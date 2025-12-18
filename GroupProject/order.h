@@ -29,7 +29,7 @@ public:
     void print() const;
 
     // Write to File
-    void writeToFile(const std::string& filename = "orders.txt") const;
+    void writeToFile(const std::string& filename = "order.txt") const;
 
 private:
     std::vector<Item> items;
