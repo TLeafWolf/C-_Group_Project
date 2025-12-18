@@ -3,13 +3,21 @@
 #include <string>
 #include <vector>
 
+#include "order.h"
+
 // Class representing the restaurant's menu.
 class Menu {
 public:
-    Menu(std::string filename);
-
+    bool open(std::string filename);
     void display();
+    Order::Item processOption();
 
 private:
-    std::vector<std::string> items;
+    struct Option {
+        std::string name;
+        std::string details[3];
+        double prices[3];
+    };
+
+    std::vector<Option> items;
 };

@@ -5,6 +5,9 @@
 #include <string>
 #include <iomanip>
 
+#include "menu.h"
+#include "order.h"
+
 using namespace std;
 // might adjust prices later
 
@@ -127,43 +130,63 @@ void totalPrice() {
   // code to be executed
 }
 int main() {
-    cout << "MENU\n";
+    // cout << "MENU\n";
 
-    // Read the menu from a file remove what we need to once we succesfully get menu.cpp and menu.h working with this main file.
-    string filename = "menu.txt";
-    ifstream inputFile(filename);
+    // // Read the menu from a file remove what we need to once we succesfully get menu.cpp and menu.h working with this main file.
+    // string filename = "menu.txt";
+    // ifstream inputFile(filename);
 
-    if (!inputFile.is_open()) {
-        cerr << "Error: Could not open file " << filename << endl;
+    // if (!inputFile.is_open()) {
+    //     cerr << "Error: Could not open file " << filename << endl;
+    //     return 1;
+    // }
+
+    // string line;
+    // while (getline(inputFile, line)) {
+    //     cout << line << endl;
+    // }
+    // inputFile.close(); // last line of file read code
+
+    // // Create the OrderSystem object
+    // OrderSystem os;
+    // int choice = 0;
+
+    Menu menu;
+
+    if (!menu.open("menu.txt")) {
         return 1;
     }
 
-    string line;
-    while (getline(inputFile, line)) {
-        cout << line << endl;
-    }
-    inputFile.close(); // last line of file read code
+    Order order;
 
-    // Create the OrderSystem object
-    OrderSystem os;
-    int choice = 0;
+    for (;;) {
+        menu.display();
+        Order::Item item = menu.processOption();
 
-    // Main loop for taking the user's order
-    while (true) {
-        os.displayMenu();
-        cout << "Select an option (1-6): ";
-        cin >> choice;
-
-        // Process the user's selection
-        if (choice >= 1 && choice <= 5)
-            os.processChoice(choice);
-        else if (choice == 6) {
-            os.completeOrder();
-            return 0;
-        } else {
-            cout << "Invalid choice.\n";
+        if (item.name.empty()) {
+            order.print();
+            break;
         }
+
+        order.addItem(item.name, item.detail, item.price);
     }
+
+    // // Main loop for taking the user's order
+    // while (true) {
+    //     os.displayMenu();
+    //     cout << "Select an option (1-6): ";
+    //     cin >> choice;
+
+    //     // Process the user's selection
+    //     if (choice >= 1 && choice <= 5)
+    //         os.processChoice(choice);
+    //     else if (choice == 6) {
+    //         os.completeOrder();
+    //         return 0;
+    //     } else {
+    //         cout << "Invalid choice.\n";
+    //     }
+    // }
 
     return 0;
 

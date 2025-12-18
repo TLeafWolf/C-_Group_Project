@@ -14,10 +14,16 @@ struct orderItem {
 // Class representing a restaurant order.
 class Order {
 public:
-    Order(int orderID);
+    //Order();
+
+    struct Item {
+        std::string name;
+        std::string detail;
+        double price;
+    };
 
     // Add an item to the order
-    void addItem(const std::string& itemName, int quantity, double price);
+    void addItem(const std::string& name, const std::string& detail, double price);
 
     // Print order details
     void print() const;
@@ -26,11 +32,5 @@ public:
     void writeToFile(const std::string& filename = "orders.txt") const;
 
 private:
-    struct Item {
-        std::string name;
-        int quantity;
-        double price;
-    };
-
     std::vector<Item> items;
 };

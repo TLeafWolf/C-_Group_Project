@@ -1,26 +1,34 @@
 #include "order.h"
 
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 
 // Add an item to the order
-void Order::addItem(const std::string& itemName, int quantity, double price) {
+void Order::addItem(const std::string& name, const std::string& detail, double price) {
     Item item;
-    item.name = itemName;
-    item.quantity = quantity;
+    item.name = name;
+    item.detail = detail;
     item.price = price;
     items.push_back(item);
 }
 
 // Prints the order details into console.
 void Order::print() const {
-    std::cout << "Your order:\n";
+    double total = 0.0;
+
+    std::cout << "YOUR ORDER:" << std::endl;
     for (const auto& item : items) {
-        std::cout << item.name << item.quantity << item.price << std::endl;
+        std::cout << std::fixed << std::setprecision(2);
+        std::cout << item.name << " - " << item.detail << ": $" << item.price << std::endl;
+        total += item.price;
     }
+
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << std::endl << "YOUR TOTAL:" << std::endl << '$' << total << std::endl;
 }
 
-// Prints the order details to orders.txt
+// Prints the order details to orders.txt (might be uneeded and removed)
 void Order::writeToFile(const std::string& filename) const {
     std::ofstream file(filename);
 
@@ -30,7 +38,7 @@ void Order::writeToFile(const std::string& filename) const {
     }
 
     for (const auto& item : items) {
-        file << item.name << item.quantity << item.price;
+        file << item.name << item.detail << item.price;
     }
 
     file.close();
