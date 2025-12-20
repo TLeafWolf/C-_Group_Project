@@ -15,6 +15,10 @@ bool Menu::open(std::string filename) {
 
     std::string line;
     while (std::getline(file, line)) {
+        // For some reason the online compiler doesn't like the carriage return (\r), so remove it if it exists
+        if (!line.empty() && line.back() == '\r')
+            line.pop_back();
+
         Option option;
         option.name = line;
 
