@@ -129,6 +129,7 @@ public:
 void totalPrice() {
   // code to be executed
 }
+
 int main() {
     // cout << "MENU\n";
 
@@ -159,7 +160,7 @@ int main() {
 
     Order order;
 
-    for (;;) {
+    while (true) {
         menu.display();
         Order::Item item = menu.processOption();
 
@@ -170,6 +171,8 @@ int main() {
 
         order.addItem(item.name, item.detail, item.price);
     }
+
+    order.writeToFile();
 
     // // Main loop for taking the user's order
     // while (true) {

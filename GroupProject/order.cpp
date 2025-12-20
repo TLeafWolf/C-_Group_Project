@@ -37,9 +37,15 @@ void Order::writeToFile(const std::string& filename) const {
         return;
     }
 
+    double total = 0.0;
+
     for (const auto& item : items) {
-        file << item.name << item.detail << item.price;
+        file << item.name << " - " << item.detail << ": $" << item.price << std::endl;
+        total += item.price;
     }
+
+    file << std::fixed << std::setprecision(2);
+    file << std::endl << "TOTAL:" << std::endl << '$' << total << std::endl;
 
     file.close();
 }

@@ -1,0 +1,6 @@
+Fries - Medium: $3.29
+Nuggets - 4-Piece: $2.99
+Burger - Large: $15
+
+TOTAL:
+$21.28
