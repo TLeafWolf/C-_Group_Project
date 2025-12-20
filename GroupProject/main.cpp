@@ -169,7 +169,7 @@ int main() {
             break;
         }
 
-        order.addItem(item.name, item.detail, item.price);
+        order.addItem(item.name, item.details, item.price);
     }
 
     order.writeToFile();

@@ -18,12 +18,12 @@ public:
 
     struct Item {
         std::string name;
-        std::string detail;
+        std::vector<std::string> details;
         double price;
     };
 
     // Add an item to the order
-    void addItem(const std::string& name, const std::string& detail, double price);
+    void addItem(const std::string& name, std::vector<std::string> details, double price);
 
     // Print order details
     void print() const;

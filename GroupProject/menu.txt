@@ -1,15 +1,19 @@
-Drink
+-Drink
 Small Medium Large
 2.00 3.00 4.00
-Burger
+-Burger
 Small Medium Large
 7.00 10.00 15.00
-Fries
+-Fries
 Small Medium Large
 2.29 3.29 4.29
-Nuggets
+-Nuggets
 4-Piece 8-Piece 12-Piece
 2.99 3.99 4.99
-Pizza
+Ketchup Mustard Mayo None
+0.50 0.50 0.50 0.00
+-Pizza
 Small Medium Large
 10.00 15.00 20.00
+Pepperoni Sausage Cheese Custom
+1.00 1.50 0.00 2.50

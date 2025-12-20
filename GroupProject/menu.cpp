@@ -15,22 +15,37 @@ bool Menu::open(std::string filename) {
 
     std::string line;
     while (std::getline(file, line)) {
+        if (line.empty())
+            continue;
+        
         // For some reason the online compiler doesn't like the carriage return (\r), so remove it if it exists
-        if (!line.empty() && line.back() == '\r')
+        if (line.back() == '\r')
             line.pop_back();
+        
+        if (line[0] == '-') {
+            Item item;
+            item.name = line.substr(1);
+            items.push_back(item);
+            std::getline(file, line);
+        }
 
-        Option option;
-        option.name = line;
-
-        std::getline(file, line);
-        std::istringstream details(line);
+        std::istringstream names(line);
         std::getline(file, line);
         std::istringstream prices(line);
 
-        details >> option.details[0] >> option.details[1] >> option.details[2];
-        prices >> option.prices[0] >> option.prices[1] >> option.prices[2];
+        Option option;
 
-        items.push_back(option);
+        std::string name;
+        while (names >> name) {
+            option.names.push_back(name);
+        }
+
+        double price;
+        while (prices >> price) {
+            option.prices.push_back(price);
+        }
+
+        items[items.size() - 1].options.push_back(option);
     }
     
     return true;
@@ -48,7 +63,7 @@ Order::Item Menu::processOption() {
     int option;
     int detail;
     for (;;) {
-        std::cout << "Select an Option (1-" << items.size() + 1 << "): ";
+        std::cout << "Select an Item (1-" << items.size() + 1 << "): ";
         std::cin >> option;
 
         if (option >= 1 && option <= items.size() + 1) {
@@ -65,28 +80,38 @@ Order::Item Menu::processOption() {
 
     std::cout << std::endl;
 
-    for (;;) {
+    Item item = items[option - 1];
+    int suboption;
+
+    std::vector<std::string> option_names;
+    double total = 0.0;
+    
+    for (int i = 0; i < item.options.size(); ++i) {
         std::cout << "OPTIONS:" << std::endl;
-        for (int i = 0; i < 3; ++i) {
+
+        for (int j = 0; j < item.options[i].names.size(); ++j) {
             std::cout << std::fixed << std::setprecision(2);
-            std::cout << i + 1 << ". " << items[option - 1].details[i] << " - $" << items[option - 1].prices[i] << std::endl;
+            std::cout << j + 1 << ". " << item.options[i].names[j] << " - $" << item.options[i].prices[j] << std::endl;
         }
 
-        std::cout << "Select an Option (1-3): ";
-        std::cin >> detail;
+        std::cout << "Select an Option (1-" << item.options[i].names.size() << "): ";
+        std::cin >> suboption;
 
-        if (detail >= 1 && detail <= 3) {
-            break;
+        if (suboption < 1 || suboption > item.options[i].names.size()) {
+            std::cout << "Invalid option." << std::endl;
+            --i;
+            continue;
         }
 
-        std::cout << "Invalid option" << std::endl;
+        option_names.push_back(item.options[i].names[suboption - 1]);
+        total += item.options[i].prices[suboption - 1];
     }
 
-    Order::Item item;
+    Order::Item order_item;
 
-    item.name = items[option - 1].name;
-    item.detail = items[option - 1].details[detail - 1];
-    item.price = items[option - 1].prices[detail - 1];
+    order_item.name = item.name;
+    order_item.details = option_names;
+    order_item.price = total;
 
-    return item;
+    return order_item;
 }

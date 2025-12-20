@@ -14,10 +14,14 @@ public:
 
 private:
     struct Option {
-        std::string name;
-        std::string details[3];
-        double prices[3];
+        std::vector<std::string> names;
+        std::vector<double> prices;
     };
 
-    std::vector<Option> items;
+    struct Item {
+        std::string name;
+        std::vector<Option> options;
+    };
+
+    std::vector<Item> items;
 };
