@@ -2,6 +2,7 @@
 
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 #include <iostream>
 
 // Open a menu and load it (returns true if successful, false if failure).
@@ -63,7 +64,8 @@ Order::Item Menu::processOption() {
     for (;;) {
         std::cout << "OPTIONS:" << std::endl;
         for (int i = 0; i < 3; ++i) {
-            std::cout << i + 1 << ". " << items[option - 1].details[i] << std::endl;
+            std::cout << std::fixed << std::setprecision(2);
+            std::cout << i + 1 << ". " << items[option - 1].details[i] << " - $" << items[option - 1].prices[i] << std::endl;
         }
 
         std::cout << "Select an Option (1-3): ";
