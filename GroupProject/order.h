@@ -4,18 +4,10 @@
 #include <vector>
 #include <iostream>
 
-// Struct representing a single order item.
-struct orderItem {
-    std::string name;
-    int quantity;
-    double price;
-};
-
 // Class representing a restaurant order.
 class Order {
 public:
-    //Order();
-
+    // A struct representing an order item
     struct Item {
         std::string name;
         std::vector<std::string> details;
@@ -32,5 +24,6 @@ public:
     void writeToFile(const std::string& filename = "orders.txt") const;
 
 private:
+    // An array of order items
     std::vector<Item> items;
 };
